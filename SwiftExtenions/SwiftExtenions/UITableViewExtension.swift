@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 public extension UITableView {
-    
     /**滚动到第一行*/
     func sf_scrollToFirst(scrollPosition: UITableView.ScrollPosition, animated: Bool) {
         guard numberOfSections > 0 else { return }
