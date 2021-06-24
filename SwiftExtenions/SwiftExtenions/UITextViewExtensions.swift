@@ -17,7 +17,7 @@ extension UITextView {
 //        static let hw_placeholderLabelKey = UnsafeRawPointer.init(bitPattern: "hw_placeholderLabelKey".hashValue)
 //        /// ...其他Key声明
 //    }
-// 
+//
 //    /**占位文字*/
 //    @IBInspectable public var placeholder: String {
 //        get {
@@ -27,7 +27,7 @@ extension UITextView {
 //            self.placeholderLabel.text = newValue
 //        }
 //    }
-// 
+//
 //    /**占位文字颜色*/
 //    @IBInspectable public var placeholderColor: UIColor {
 //        get {
@@ -37,7 +37,7 @@ extension UITextView {
 //            self.placeholderLabel.textColor = newValue
 //        }
 //    }
-// 
+//
 //    fileprivate var placeholderLabel: UILabel {
 //        get {
 //            var label = objc_getAssociatedObject(self, UITextView.RuntimeKey.hw_placeholderLabelKey!) as? UILabel
