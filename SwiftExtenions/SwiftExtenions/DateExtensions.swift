@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension Date {
+public extension Date {
     /**时间戳(毫秒)*/
     static var sf_getMilliSeconds: TimeInterval { //milliseconds
         get { return Date().timeIntervalSince1970 * 1000 }
@@ -23,36 +23,36 @@ extension Date {
 
 }
 
-extension Date {
+public extension Date {
     /// 格式化当前日期（如yyyy-MM-dd HH:mm:ss、yyyy年MM月dd日 HH:mm:ss组合）
-    public func sf_getCurrentDate(format: String) -> String {
+    func sf_getCurrentDate(format: String) -> String {
         let dateformatter = DateFormatter()
         dateformatter.dateFormat = format
         return dateformatter.string(from: Date())
     }
     
     /// 年
-    public func sf_getYear() -> Int {
+    func sf_getYear() -> Int {
         let calendar = NSCalendar.current
         let com = calendar.dateComponents([.year,.month,.day], from: self)
         return com.year!
     }
     /// 月
-    public func sf_getMonth() -> Int {
+    func sf_getMonth() -> Int {
         let calendar = NSCalendar.current
         let com = calendar.dateComponents([.year,.month,.day], from: self)
         return com.month!
         
     }
     /// 日
-    public func sf_getDay() -> Int {
+    func sf_getDay() -> Int {
         let calendar = NSCalendar.current
         let com = calendar.dateComponents([.year,.month,.day], from: self)
         return com.day!
         
     }
     /// 周
-    public func sf_getWeekDay() -> Int {
+    func sf_getWeekDay() -> Int {
         let interval = Int(self.timeIntervalSince1970)
         let days = Int(interval / 86400)
         let weekday = ((days + 4) % 7 + 7) % 7
@@ -60,7 +60,7 @@ extension Date {
     }
     
     /// 是否是今天
-    public func sf_isToday() -> Bool {
+    func sf_isToday() -> Bool {
         let calendar = NSCalendar.current
         let com = calendar.dateComponents([.year,.month,.day], from: self)
         let comNow = calendar.dateComponents([.year,.month,.day], from: Date())
@@ -68,7 +68,7 @@ extension Date {
     }
     
     /// 日期转日期字符串
-    public static func sf_dateToDateString(date:Date, dateFormat:String) -> String {
+    static func sf_dateToDateString(date:Date, dateFormat:String) -> String {
         let timeZone = NSTimeZone.local
         let formatter = DateFormatter()
         formatter.timeZone = timeZone
@@ -79,7 +79,7 @@ extension Date {
     }
     
     /// 日期字符串转日期
-    public static func sf_dateStringToDate(dateStr: String, dateFormat: String) -> Date {
+    static func sf_dateStringToDate(dateStr: String, dateFormat: String) -> Date {
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = NSTimeZone.local
         dateFormatter.dateFormat = dateFormat
@@ -88,13 +88,13 @@ extension Date {
     }
     
     /// 计算天数差
-    public static func sf_dateDifference(dateA: Date, dateB: Date) -> Double {
+    static func sf_dateDifference(dateA: Date, dateB: Date) -> Double {
         let interval = dateA.timeIntervalSince(dateB)
         return interval / 86400
     }
     
     /// 比较时间先后
-    public static func sf_compareOneDay(oneDay: Date, anotherDay: Date) -> Int {
+    static func sf_compareOneDay(oneDay: Date, anotherDay: Date) -> Int {
         let dateFormatter:DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let oneDayStr:String = dateFormatter.string(from: oneDay)
@@ -115,14 +115,14 @@ extension Date {
     }
     
     /// 获取当前时间戳
-    public static func sf_getCurrentStamp() -> Int {
+    static func sf_getCurrentStamp() -> Int {
         let date = Date()
         let timeInterval:Int = Int(date.timeIntervalSince1970)
         return timeInterval
     }
     
     /// 刚刚,几分钟前,几小时前,天前,月前,年前
-    public func sf_getCompareCurrentTime(dateStr: String, dateFormat: String) -> String {
+    func sf_getCompareCurrentTime(dateStr: String, dateFormat: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = NSTimeZone.local
         dateFormatter.dateFormat = dateFormat
@@ -155,7 +155,7 @@ extension Date {
     }
     
     /// 获取日期前后多少天的数据 (年,月,日,周)
-    public static func sf_getTotalDate(date: Date, length: NSInteger, reduce: Bool) -> [(String, String, String, String)] {
+    static func sf_getTotalDate(date: Date, length: NSInteger, reduce: Bool) -> [(String, String, String, String)] {
         var year = date.sf_getYear()
         var month = date.sf_getMonth()
         var day = date.sf_getDay()
@@ -244,7 +244,7 @@ extension Date {
 
 
 
-extension Date {
+public extension Date {
 /**
    处理会话列表时间：刚刚,几分钟前,几小时前,几天前,几月前,几年前
 */
@@ -343,7 +343,7 @@ extension Date {
 
 }
 
-extension Date {
+public extension Date {
     // 获取当前时区的时间
     func sf_localeDate() -> Date {
         let localeTimezone = TimeZone.current

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension UITextField{
+public extension UITextField{
     
     /**设置文本框的左边间隔*/
     func sf_setPaddingLeft(_ padding: CGFloat) {

@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-extension UIColor {
+public extension UIColor {
     /**
      //为了调用时具有命名空间，可以定义了一个名叫UIColorExtensions的内嵌枚举类型,然后定义了一个静态属性来引用该枚举。
      static let designKit = UIColorExtensions.self
@@ -38,7 +38,7 @@ extension UIColor {
 
 
 
-extension UIColor{
+public extension UIColor{
     /**UIColor with RGB*/
      convenience init(r:UInt32 ,g:UInt32 , b:UInt32 , a:CGFloat = 1.0) {
        self.init(red: CGFloat(r) / 255.0,

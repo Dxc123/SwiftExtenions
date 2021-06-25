@@ -21,10 +21,10 @@ public extension UIButton {
         self.setBackgroundImage(theImage, for: forState)
     }
 }
-extension UIButton {
+public extension UIButton {
    
     ///MARK:--调整按钮中的图标和文字位置(适配 RTL布局)
-    public func sf_setTitlePosition(image: UIImage?,
+    func sf_setTitlePosition(image: UIImage?,
                                  title: String,
                    titlePosition: UIView.ContentMode,
                    contentSpacing: CGFloat,
@@ -101,7 +101,7 @@ extension UIButton {
         self.imageEdgeInsets = imageInsets
     }
 }
-extension UIButton {
+public extension UIButton {
 
     //MARK: -定义button 内Image相对label的位置
     enum ButtonImagePosition {
@@ -162,7 +162,7 @@ extension UIButton {
 
 
 
-extension UIButton {
+public extension UIButton {
    
     /// 文字的按钮
     ///
@@ -174,7 +174,7 @@ extension UIButton {
     ///   - obj: 按钮响应对象
     ///   - methord: 按钮事件
     /// - Returns: 按钮
-    public class func sf_creatBtn(title: String, titleFont: UIFont, titleColor: UIColor = .black, bgColor: UIColor = .clear, obj: AnyObject?, methord: Selector?) -> UIButton {
+    class func sf_creatBtn(title: String, titleFont: UIFont, titleColor: UIColor = .black, bgColor: UIColor = .clear, obj: AnyObject?, methord: Selector?) -> UIButton {
         let btn = UIButton.init(type: .custom)
         btn.setTitle(title, for: .normal)
         btn.setTitleColor(titleColor, for: .normal)
@@ -194,7 +194,7 @@ extension UIButton {
     ///   - obj: 按钮响应对象
     ///   - methord: 按钮事件
     /// - Returns: 按钮
-    public class func sf_creatBtn(img: String, selectImg: String?, obj: AnyObject?, methord: Selector?) -> UIButton {
+    class func sf_creatBtn(img: String, selectImg: String?, obj: AnyObject?, methord: Selector?) -> UIButton {
         let btn = UIButton.init(type: .custom)
         btn.setImage(UIImage.init(named: img), for: .normal)
         if selectImg != nil {
@@ -214,7 +214,7 @@ extension UIButton {
     ///   - obj: 按钮响应对象
     ///   - methord: 按钮事件
     /// - Returns: 按钮
-    public class func sf_creatBtn(bgImg: String, selectBgImg: String?, obj: AnyObject?, methord: Selector?) -> UIButton {
+    class func sf_creatBtn(bgImg: String, selectBgImg: String?, obj: AnyObject?, methord: Selector?) -> UIButton {
         let btn = UIButton.init(type: .custom)
         btn.setBackgroundImage(UIImage.init(named: bgImg), for: .normal)
         if selectBgImg != nil {
@@ -232,7 +232,7 @@ extension UIButton {
     ///   - title: 重置标题
     ///   - timeOut: 倒计时
     ///   - waitTime: 等待时间
-    public func sf_creatBtn(title: String, timeOut: NSInteger, waitTitle: String) {
+   func sf_creatBtn(title: String, timeOut: NSInteger, waitTitle: String) {
         let timer = DispatchSource.makeTimerSource()
         timer.setEventHandler {
             if timeOut <= 0 {

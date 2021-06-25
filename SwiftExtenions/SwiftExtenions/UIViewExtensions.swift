@@ -127,7 +127,7 @@ public extension UIView {
 
    
 }
-extension UIView{
+public extension UIView{
     /**注册 NIb*/
     class func sf_ViewNib() -> UINib {
         let hasNib: Bool = Bundle.main.path(forResource: self.nib_className, ofType: "nib") != nil
@@ -203,12 +203,12 @@ extension UIView {
 }
 // MARK: - 扩展UIView,增加抖动方法
 
-public enum ShakeDirection: Int
-{
-    case horizontal
-    case vertical
-}
-extension UIView{
+public extension UIView{
+    
+   enum ShakeDirection: Int{
+        case horizontal
+        case vertical
+    }
     ///
     /// - Parameters:
     ///   - direction: 抖动方向（默认是水平方向）
@@ -216,7 +216,7 @@ extension UIView{
     ///   - interval: 每次抖动时间（默认0.1秒）
     ///   - delta: 抖动偏移量（默认2）
     ///   - completion: 抖动动画结束后的回调
-    public func sf_shake(direction: ShakeDirection = .horizontal, times: Int = 5, interval: TimeInterval = 0.1, delta: CGFloat = 2, completion: (() -> Void)? = nil)
+    func sf_shake(direction: ShakeDirection = .horizontal, times: Int = 5, interval: TimeInterval = 0.1, delta: CGFloat = 2, completion: (() -> Void)? = nil)
     {
         UIView.animate(withDuration: interval, animations: {
             
@@ -244,9 +244,9 @@ extension UIView{
 
 
 
-extension UIView {
+public extension UIView {
     
-    public enum GradientDirection: Int{
+    enum GradientDirection: Int{
         ///水平
         case horizontal
         ///垂直
@@ -289,7 +289,7 @@ extension UIView {
     
         // 移除渐变图层
         // （当希望只使用backgroundColor的颜色时，需要先移除之前加过的渐变图层）
-        public func removeGradientLayer() {
+    func removeGradientLayer() {
             if let sl = self.layer.sublayers {
                 for layer in sl {
                     if layer.isKind(of: CAGradientLayer.self) {

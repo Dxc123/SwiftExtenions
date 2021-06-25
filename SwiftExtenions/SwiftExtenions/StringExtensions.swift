@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 import CommonCrypto//MD5加密
-extension String{
+public extension String{
     ///格式化数字（如5000 = 0.5万）
-    public func sf_stringFromPowerInt(count:Int) -> String {
+   func sf_stringFromPowerInt(count:Int) -> String {
         var tagString = ""
         if count > 100000000 {
             tagString = String(format: "%.1f亿", Double(count) / 100000000)
@@ -23,7 +23,7 @@ extension String{
         return tagString
     }
     ///格式化时间戳(返回几分钟前,几小时前,几天前等)
-    public func sf_updateTimeToCurrennTime(timeStamp: Double) -> String {
+   func sf_updateTimeToCurrennTime(timeStamp: Double) -> String {
            //获取当前的时间戳
            let currentTime = Date().timeIntervalSince1970
            //时间戳为毫秒级要 ／ 1000， 秒就不用除1000，参数带没带000
@@ -59,11 +59,11 @@ extension String{
 }
 
 
-extension String {
+public extension String {
     /// 是否包含中文
     ///
     /// - Returns: 包含中文
-    public func sf_contentChineseCharacters() -> Bool {
+    func sf_contentChineseCharacters() -> Bool {
         let inputString = "[\u{4e00}-\u{9fa5}]+"
         let predicate = NSPredicate(format: "SELF MATCHES %@", inputString)
         return predicate.evaluate(with: self)
@@ -72,7 +72,7 @@ extension String {
     /// 是否是数字
     ///
     /// - Returns: 是否是纯数字
-    public func sf_isNumber() -> Bool {
+    func sf_isNumber() -> Bool {
         let emailRegex: String = "[a-zA-Z]"
         let emailTest: NSPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
         return emailTest.evaluate(with: self)
@@ -81,7 +81,7 @@ extension String {
     /// 是否是金额
     ///
     /// - Returns: 是否是金额
-    public func sf_isValidateMoney() -> Bool {
+    func sf_isValidateMoney() -> Bool {
         let emailRegex: String = "^[0-9]+(\\.[0-9]{1,6})?$"
         let emailTest: NSPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
         return emailTest.evaluate(with: self)
@@ -90,7 +90,7 @@ extension String {
     /// 是否是手机号
     ///
     /// - Returns: 是否是手机号
-    public func sf_isMobilePhone() -> Bool {
+    func sf_isMobilePhone() -> Bool {
         /**
          * 手机号码
          * 移动：134[0-8],135,136,137,138,139,150,151,157,158,159,182,187,188
@@ -127,7 +127,7 @@ extension String {
     /// 是否是校验码
     ///
     /// - Returns: 是否是校验码
-    public func sf_isCheckPSD() -> Bool {
+   func sf_isCheckPSD() -> Bool {
         let pattern = "^([0-9]){6}"
         let pred = NSPredicate(format: "SELF MATCHES %@", pattern)
         let isMatch: Bool = pred.evaluate(with: self)
@@ -137,7 +137,7 @@ extension String {
     /// 是否是身份证
     ///
     /// - Returns: 是否是身份证
-    public func sf_isIDCard() -> Bool {
+    func sf_isIDCard() -> Bool {
         let pattern = "(^[0-9]{15}$)|([0-9]{17}([0-9]|X)$)"
         let pred = NSPredicate(format: "SELF MATCHES %@", pattern)
         let isMatch: Bool = pred.evaluate(with: self)
@@ -150,7 +150,7 @@ extension String {
     ///   - content: 插入内容
     ///   - locat: 插入位置
     /// - Returns: 结果字符串
-    public func sf_insert(content: String, locat: Int) -> String {
+    func sf_insert(content: String, locat: Int) -> String {
         if !(locat < count) { return "操作超出范围" }
         let str1 = sf_subStringTo(index: locat)
         let str2 = sf_subStringFrom(index: locat + 1)
@@ -163,7 +163,7 @@ extension String {
     ///   - start: 开始位置
     ///   - length: 长度
     /// - Returns: 结果字符串
-    public func sf_subString(start:Int, length:Int = -1) -> String {
+    func sf_subString(start:Int, length:Int = -1) -> String {
         var len = length
         if len == -1 {
             len = count - start
@@ -177,7 +177,7 @@ extension String {
     ///
     /// - Parameter index: 结束索引
     /// - Returns: 结果字符串
-    public func sf_subStringTo(index: Int) -> String {
+    func sf_subStringTo(index: Int) -> String {
         let theIndex = self.index(self.startIndex, offsetBy:min(self.count, index))
         return String(self[startIndex...theIndex])
     }
@@ -186,7 +186,7 @@ extension String {
     ///
     /// - Parameter index: 开始索引
     /// - Returns: 结果字符串
-    public func sf_subStringFrom(index: Int) -> String {
+    func sf_subStringFrom(index: Int) -> String {
         let theIndex = self.index(self.endIndex, offsetBy: index - self.count)
         return String(self[theIndex..<endIndex])
     }
@@ -195,7 +195,7 @@ extension String {
     ///
     /// - Parameter number: 手机号
     /// - Returns: 处理后手机号
-    public func sf_numberSuitScanf(number: String) -> String {
+     func sf_numberSuitScanf(number: String) -> String {
         let numberString: String = (number as NSString).replacingCharacters(in: NSRange(location: 3, length: 4), with: "****")
         return numberString
     }
@@ -203,7 +203,7 @@ extension String {
     /// 去除Emoji表情
     ///
     /// - Returns: 处理后字符串
-    public func sf_clearEmoji() -> String {
+    func sf_clearEmoji() -> String {
         do {
             let expression = try NSRegularExpression.init(pattern: "[^\\u0020-\\u007E\\u00A0-\\u00BE\\u2E80-\\uA4CF\\uF900-\\uFAFF\\uFE30-\\uFE4F\\uFF00-\\uFFEF\\u2000-\\u201f\r\n]", options: .caseInsensitive)
             return expression.stringByReplacingMatches(in: self, options: .reportProgress, range: NSRange.init(location: 0, length: self.count), withTemplate: "")
@@ -216,7 +216,7 @@ extension String {
     ///
     /// - Parameter length: 字符串长度
     /// - Returns: 结果字符串
-    public static func sf_creatRandomStr(length: Int) -> String {
+    static func sf_creatRandomStr(length: Int) -> String {
         let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         var resultStr = ""
         
@@ -232,7 +232,7 @@ extension String {
     ///   - html: 文本内容
     ///   - width: 图片最大宽度
     /// - Returns: 富文本
-    public static func sf_showAttributedToHtml(html: String!, width: CGFloat) -> NSAttributedString? {
+    static func sf_showAttributedToHtml(html: String!, width: CGFloat) -> NSAttributedString? {
         let newString = """
         <html>
             <head>
@@ -264,28 +264,28 @@ extension String {
     ///
     /// - Parameter str: 字符串
     /// - Returns: 是否包含
-    public func sf_contains(str: String) -> Bool {
+   func sf_contains(str: String) -> Bool {
         return range(of: str) != nil
     }
     
     /// 清除字符串空格
     ///
     /// - Returns: 处理后字符
-    public func sf_clearSpace() -> String {
+   func sf_clearSpace() -> String {
         return replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "\r", with: "").replacingOccurrences(of: "\n", with: "")
     }
     
     /// 反转字符串
     ///
     /// - Returns: 处理后字符串
-    public func sf_reverse() -> String {
+     func sf_reverse() -> String {
         return String(self.reversed())
     }
     
     /// 将字符串拆分数组
     ///
     /// - Returns: 拆分后数组
-    public func sf_stringToArr() -> [String] {
+    func sf_stringToArr() -> [String] {
         let num = count
         if !(num > 0) { return [""] }
         var array: [String] = []
@@ -305,7 +305,7 @@ extension String {
     ///   - numColor: 数字字体颜色
     ///   - lineSpace: 行间距
     /// - Returns: 处理后字符串
-    public func sf_attributeNumber(font: UIFont, numFont: UIFont, color: UIColor, numColor: UIColor, lineSpace: CGFloat?) -> NSMutableAttributedString {
+   func sf_attributeNumber(font: UIFont, numFont: UIFont, color: UIColor, numColor: UIColor, lineSpace: CGFloat?) -> NSMutableAttributedString {
         let AttributedStr = NSMutableAttributedString(string: self, attributes: [.font: font, .foregroundColor: color])
         for i in 0 ..< self.count {
             let char = self.utf8[self.index(self.startIndex, offsetBy: i)]
@@ -325,32 +325,32 @@ extension String {
     /**
      将当前字符串拼接到cache目录后面
      */
-    public func sf_cache() -> String {
+    func sf_cache() -> String {
         let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last!
         return (path as NSString).appendingPathComponent((self as NSString).lastPathComponent)
     }
     /**
      将当前字符串拼接到doc目录后面
      */
-    public func sf_doc() -> String {
+    func sf_doc() -> String {
         let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first!
         return (path as NSString).appendingPathComponent((self as NSString).lastPathComponent)
     }
     /**
      将当前字符串拼接到tmp目录后面
      */
-    public func sf_tmp() -> String {
+    func sf_tmp() -> String {
         let path = NSTemporaryDirectory() as NSString
         return path.appendingPathComponent((self as NSString).lastPathComponent)
     }
     
     /// 字符串首字符
-    public var sf_first: String {
+    var sf_first: String {
         get { return String(self[startIndex]) }
     }
     
     /// 字符串尾字符
-    public var sf_last: String {
+    var sf_last: String {
         get { return String(self[index(before: self.endIndex)]) }
     }
     

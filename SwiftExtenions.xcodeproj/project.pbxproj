@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C098B85F268578AD00B17A9A /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098B85E268578AD00B17A9A /* UITextFieldExtensions.swift */; };
 		C098B86126857A2700B17A9A /* UITextViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098B86026857A2700B17A9A /* UITextViewExtensions.swift */; };
+		C098B8AA2685AE5200B17A9A /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098B8A92685AE5200B17A9A /* UIViewControllerExtensions.swift */; };
 		C0E0EA2D2684A9AE00B1758C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E0EA2C2684A9AE00B1758C /* AppDelegate.swift */; };
 		C0E0EA2F2684A9AE00B1758C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E0EA2E2684A9AE00B1758C /* SceneDelegate.swift */; };
 		C0E0EA312684A9AE00B1758C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E0EA302684A9AE00B1758C /* ViewController.swift */; };
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		C098B85E268578AD00B17A9A /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensions.swift; sourceTree = "<group>"; };
 		C098B86026857A2700B17A9A /* UITextViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewExtensions.swift; sourceTree = "<group>"; };
+		C098B8A92685AE5200B17A9A /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		C0E0EA292684A9AE00B1758C /* SwiftExtenions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftExtenions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E0EA2C2684A9AE00B1758C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0E0EA2E2684A9AE00B1758C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				C0E0EA6B2684AC5C00B1758C /* UIViewExtensions.swift */,
 				C098B85E268578AD00B17A9A /* UITextFieldExtensions.swift */,
 				C098B86026857A2700B17A9A /* UITextViewExtensions.swift */,
+				C098B8A92685AE5200B17A9A /* UIViewControllerExtensions.swift */,
 			);
 			path = SwiftExtenions;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				C098B86126857A2700B17A9A /* UITextViewExtensions.swift in Sources */,
 				C0E0EA802684AC5C00B1758C /* DateExtensions.swift in Sources */,
 				C0E0EA312684A9AE00B1758C /* ViewController.swift in Sources */,
+				C098B8AA2685AE5200B17A9A /* UIViewControllerExtensions.swift in Sources */,
 				C0E0EA2D2684A9AE00B1758C /* AppDelegate.swift in Sources */,
 				C0E0EA7C2684AC5C00B1758C /* UITableViewExtension.swift in Sources */,
 				C0E0EA712684AC5C00B1758C /* DateExtensions+ChatTime.swift in Sources */,

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension UITextView {
+public extension UITextView {
     
     /*滚动到顶部**/
     func sf_scrollToTop() {

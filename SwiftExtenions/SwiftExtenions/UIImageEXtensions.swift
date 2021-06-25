@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 
 
-extension UIImage {
+public extension UIImage {
     
     /**根据颜色创建图片*/
-    public convenience init?(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
+    convenience init?(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
         let rect = CGRect(origin: .zero, size: size)
         UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
         color.setFill()
@@ -27,7 +27,7 @@ extension UIImage {
 }
 
 
-extension UIImage {
+public extension UIImage {
     /**根据颜色创建图片*/
     static func sf_getImage(_ color: UIColor) -> UIImage {
         let rect = CGRect(x: 0, y: 0, width: 1.0, height: 1.0)

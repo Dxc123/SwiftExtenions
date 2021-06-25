@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-extension UICollectionView{
+public extension UICollectionView{
     /**注册UICollectionViewCell*/
     func sf_register<T: UICollectionViewCell>(cellName: T.Type) {
         register(T.self, forCellWithReuseIdentifier: String(describing: cellName))

@@ -9,9 +9,9 @@
 import UIKit
 import Foundation
 
-extension UISearchBar {
+public extension UISearchBar {
 /** 修改SearchBar系统自带的TextField*/  
-        public var textField: UITextField {
+        var textField: UITextField {
             
             if #available(iOS 13.0, *) {//iOS 13可以直接访问文本字段：
                 return searchTextField
