@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C098B85F268578AD00B17A9A /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098B85E268578AD00B17A9A /* UITextFieldExtensions.swift */; };
+		C098B86126857A2700B17A9A /* UITextViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098B86026857A2700B17A9A /* UITextViewExtensions.swift */; };
 		C0E0EA2D2684A9AE00B1758C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E0EA2C2684A9AE00B1758C /* AppDelegate.swift */; };
 		C0E0EA2F2684A9AE00B1758C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E0EA2E2684A9AE00B1758C /* SceneDelegate.swift */; };
 		C0E0EA312684A9AE00B1758C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E0EA302684A9AE00B1758C /* ViewController.swift */; };
@@ -47,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C098B85E268578AD00B17A9A /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensions.swift; sourceTree = "<group>"; };
+		C098B86026857A2700B17A9A /* UITextViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewExtensions.swift; sourceTree = "<group>"; };
 		C0E0EA292684A9AE00B1758C /* SwiftExtenions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftExtenions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E0EA2C2684A9AE00B1758C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0E0EA2E2684A9AE00B1758C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,13 +165,15 @@
 				C0E0EA612684AC5C00B1758C /* StringExtension+Size.swift */,
 				C0E0EA682684AC5C00B1758C /* StringExtensions.swift */,
 				C0E0EA642684AC5C00B1758C /* UIButtonExtensions.swift */,
-				C0E0EA632684AC5C00B1758C /* UICollectionViewExtension.swift */,
 				C0E0EA6C2684AC5C00B1758C /* UIColorExtensions.swift */,
 				C0E0EA5F2684AC5C00B1758C /* UIImageEXtensions.swift */,
 				C0E0EA602684AC5C00B1758C /* UISearchBarExtension.swift */,
 				C0E0EA692684AC5C00B1758C /* UITableViewExtension.swift */,
+				C0E0EA632684AC5C00B1758C /* UICollectionViewExtension.swift */,
 				C0E0EA6F2684AC5C00B1758C /* UIViewExtension+Frame.swift */,
 				C0E0EA6B2684AC5C00B1758C /* UIViewExtensions.swift */,
+				C098B85E268578AD00B17A9A /* UITextFieldExtensions.swift */,
+				C098B86026857A2700B17A9A /* UITextViewExtensions.swift */,
 			);
 			path = SwiftExtenions;
 			sourceTree = "<group>";
@@ -303,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0E0EA822684AC5C00B1758C /* UIViewExtension+Frame.swift in Sources */,
+				C098B86126857A2700B17A9A /* UITextViewExtensions.swift in Sources */,
 				C0E0EA802684AC5C00B1758C /* DateExtensions.swift in Sources */,
 				C0E0EA312684A9AE00B1758C /* ViewController.swift in Sources */,
 				C0E0EA2D2684A9AE00B1758C /* AppDelegate.swift in Sources */,
@@ -315,6 +322,7 @@
 				C0E0EA722684AC5C00B1758C /* UIImageEXtensions.swift in Sources */,
 				C0E0EA7B2684AC5C00B1758C /* StringExtensions.swift in Sources */,
 				C0E0EA732684AC5C00B1758C /* UISearchBarExtension.swift in Sources */,
+				C098B85F268578AD00B17A9A /* UITextFieldExtensions.swift in Sources */,
 				C0E0EA7E2684AC5C00B1758C /* UIViewExtensions.swift in Sources */,
 				C0E0EA742684AC5C00B1758C /* StringExtension+Size.swift in Sources */,
 			);

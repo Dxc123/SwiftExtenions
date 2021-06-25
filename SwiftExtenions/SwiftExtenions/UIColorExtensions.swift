@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 extension UIColor {
     /**
-     //为了调用时具有命名空间，定义了一个名叫UIColorExtensions的内嵌枚举类型,然后定义了一个静态属性来引用该枚举。
+     //为了调用时具有命名空间，可以定义了一个名叫UIColorExtensions的内嵌枚举类型,然后定义了一个静态属性来引用该枚举。
      static let designKit = UIColorExtensions.self
      enum UIColorExtensions {
        
@@ -47,7 +47,7 @@ extension UIColor{
                  alpha: a)
     }
     /** UIColor with hex string*/
-    convenience init(ts_hexString hexString: String, alpha: Double = 1.0) {
+    convenience init(hexString: String, alpha: Double = 1.0) {
         let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int = UInt32()
         Scanner(string: hex).scanHexInt32(&int)
