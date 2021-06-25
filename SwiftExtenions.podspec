@@ -23,9 +23,9 @@ Pod::Spec.new do |spec|
   spec.source_files  = 'SwiftExtenions/SwiftExtenions/**/*.swift'
  
   spec.requires_arc = true
-
   spec.ios.deployment_target  = '11.0'
   # spec.osx.deployment_target  = '10.10'
+  spec.swift_versions = "5.0"#支持的Swift版本
 
   spec.framework      = 'UIKit'
   spec.osx.framework  = 'AppKit'
