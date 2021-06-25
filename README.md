@@ -1,1 +1,3 @@
 # SwiftExtenions
+
+pod 'SwiftExtenions'
